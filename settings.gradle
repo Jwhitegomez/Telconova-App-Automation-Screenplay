@@ -4,4 +4,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'AutoEx_QA'
+rootProject.name = 'Buggy_Test'
