@@ -1,6 +1,6 @@
 package co.com.buggy.test.tasks;
 
-import co.com.buggy.test.userinterfaces.RegistrationForm;
+import co.com.buggy.test.userinterfaces.RegistrationPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -14,7 +14,7 @@ public class SubmitRegistrationForm implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(RegistrationForm.REGISTER_BUTTON)
+                Click.on(RegistrationPage.REGISTER_SUBMIT_BUTTON)
         );
     }
 }

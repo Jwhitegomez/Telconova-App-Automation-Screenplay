@@ -19,7 +19,9 @@
  Join the Serenity Community on Gitter: https://gitter.im/serenity-bdd/serenity-core 
 -------------------------------------------------------------------------------------
 
+[Test worker] INFO  - Test Suite Started: Login to the Buggy Cars Rating platform
 [Test worker] INFO  - Test Suite Started: Join the Buggy Cars Rating platform
+[Test worker] INFO  - Test Suite Started: Login to the Buggy Cars Rating platform
 [Test worker] INFO  - Test Suite Started: Join the Buggy Cars Rating platform
 ]]></system-err>
 </testsuite>

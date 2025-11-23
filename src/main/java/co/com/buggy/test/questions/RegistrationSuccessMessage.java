@@ -2,11 +2,10 @@ package co.com.buggy.test.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import org.openqa.selenium.By;
+
+import static co.com.buggy.test.userinterfaces.RegistrationPage.REGISTRATION_SUCCESS_MESSAGE;
 
 public class RegistrationSuccessMessage implements Question<Boolean> {
-    private static final By SUCCESS_MESSAGE =
-            By.xpath("//form//div[contains(text(), 'Registration')]");
 
     public static RegistrationSuccessMessage appears() {
         return new RegistrationSuccessMessage();
@@ -16,7 +15,7 @@ public class RegistrationSuccessMessage implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         try {
             String message = actor.asksFor(
-                    net.serenitybdd.screenplay.questions.WebElementQuestion.the(SUCCESS_MESSAGE)
+                    net.serenitybdd.screenplay.questions.WebElementQuestion.the(REGISTRATION_SUCCESS_MESSAGE)
             ).getText();
 
             return message.contains("Registration is successful");

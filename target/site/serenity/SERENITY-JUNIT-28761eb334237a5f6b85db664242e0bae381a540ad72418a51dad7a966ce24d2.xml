@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Join the Buggy Cars Rating platform" skipped="0" tests="1" time="3.59" timestamp="2025-11-19 06:43:23"><testcase name="Successful account creation"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Join the Buggy Cars Rating platform" skipped="0" tests="2" time="5.42" timestamp="2025-11-23 04:04:25"><testcase name="Successful account creation"/><testcase name="Attempt to register with an existing username"/></testsuite>
