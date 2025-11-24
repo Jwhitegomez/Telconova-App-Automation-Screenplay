@@ -37,14 +37,14 @@ public class LoginStepDefinition {
     public void iAmInTheHomePage() {
         user.attemptsTo(
                 GoToBuggyHomePage.goTo(),
-                Pause.forMs(2000)
+                Pause.forMs(4000)
         );
     }
 
     @When("I enter valid login credentials")
     public void iEnterValidLoginCredentials() {
         LoginData data = new LoginData(
-                "85334001",
+                "jwhite.gomez4",
                 "Password123@"
         );
 
@@ -54,7 +54,7 @@ public class LoginStepDefinition {
     @When("I enter invalid login credentials")
     public void iEnterInvalidLoginCredentials() {
         LoginData data = new LoginData(
-                "85334001",
+                "jwhite.gomez4",
                 "Password123"
         );
 
@@ -65,7 +65,7 @@ public class LoginStepDefinition {
     public void iSubmitTheLoginForm() {
         user.attemptsTo(
                 SubmitLoginForm.now(),
-                Pause.forMs(2000)
+                Pause.forMs(6000)
         );
     }
 

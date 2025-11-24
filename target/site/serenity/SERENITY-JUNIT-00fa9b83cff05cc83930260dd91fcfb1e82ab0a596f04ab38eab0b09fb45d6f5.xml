@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Login to the Buggy Cars Rating platform" skipped="0" tests="2" time="5.48" timestamp="2025-11-24 03:04:08"><testcase name="Successful login"/><testcase name="Failed login due to invalid credentials"/></testsuite>

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Leave a comment on a car model page" skipped="0" tests="2" time="6.17" timestamp="2025-11-24 03:04:52"><testcase name="User cannot post a comment when not logged in"/><testcase name="Leave a comment on the model after logging in"/></testsuite>

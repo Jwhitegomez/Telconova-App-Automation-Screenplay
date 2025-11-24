@@ -29,4 +29,8 @@ public class HomePage extends PageObject {
     public static final Target LOGOUT =
             Target.the("Logout button")
                     .located(By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[3]/a"));
+
+    public static final Target MODELS_LIST =
+            Target.the("Car's model list")
+                    .located(By.xpath("/html/body/my-app/div/main/my-home/div/div[3]/div/a"));
 }

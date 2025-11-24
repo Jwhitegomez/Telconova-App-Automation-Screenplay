@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Join the Buggy Cars Rating platform" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-23T09:04:25.847Z" hostname="DESKTOP-PF36L1O" time="27.886">
+<testsuite name="Join the Buggy Cars Rating platform" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-24T08:03:31.807Z" hostname="DESKTOP-PF36L1O" time="37.121">
   <properties/>
-  <testcase name="Successful account creation" classname="Join the Buggy Cars Rating platform" time="14.485"/>
-  <testcase name="Attempt to register with an existing username" classname="Join the Buggy Cars Rating platform" time="13.401"/>
+  <testcase name="Successful account creation" classname="Join the Buggy Cars Rating platform" time="18.537"/>
+  <testcase name="Attempt to register with an existing username" classname="Join the Buggy Cars Rating platform" time="18.583"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -14,9 +14,9 @@ Successful account creation(join-the-buggy-cars-rating-platform;successful-accou
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*], extensions: []}}
-nov 23, 2025 4:04:26 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov 24, 2025 3:03:33 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov 23, 2025 4:04:26 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov 24, 2025 3:03:33 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -36,9 +36,9 @@ Attempt to register with an existing username(join-the-buggy-cars-rating-platfor
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*], extensions: []}}
-nov 23, 2025 4:04:41 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov 24, 2025 3:03:51 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov 23, 2025 4:04:41 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov 24, 2025 3:03:51 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  

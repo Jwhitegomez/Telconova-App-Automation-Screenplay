@@ -58,7 +58,6 @@ dependencies {
 
 }
 
-tasks.named('test') {
-    useJUnit()
-    systemProperty "webdriver.driver", "chrome"
+tasks.named("test") {
+    finalizedBy("aggregate")
 }

@@ -38,23 +38,24 @@ public class RegisterStepDefinition {
     @Given("I am in the Buggy Rating home page")
     public void iAmInTheBuggyRatingHomePage() {
         user.attemptsTo(
-                GoToBuggyHomePage.goTo()
+                GoToBuggyHomePage.goTo(),
+                Pause.forMs(3000)
         );
     }
 
     @When("I choose to create a new account")
     public void iChooseToCreateANewAccount() {
         user.attemptsTo(
-                Pause.forMs(2000),
+
                 ClickOn.button(REGISTER_BUTTON),
-                Pause.forMs(2000)
+                Pause.forMs(3000)
         );
     }
 
     @When("I provide valid registration credentials")
     public void iProvideValidRegistrationCredentials() {
         RegistrationData data = new RegistrationData(
-                "jimmy.gomez432132",
+                "jwhite.gomez4",
                 "Jimmy",
                 "Gomez",
                 "Password123@",
@@ -70,7 +71,7 @@ public class RegisterStepDefinition {
     public void iSubmitTheRegistrationForm() {
         user.attemptsTo(
                 SubmitRegistrationForm.now(),
-                Pause.forMs(5000)
+                Pause.forMs(6000)
         );
     }
 
@@ -82,7 +83,7 @@ public class RegisterStepDefinition {
     @When("I provide registration credentials for an already registered user")
     public void iProvideRegistrationCredentialsForAnAlreadyRegisteredUser() {
         RegistrationData data = new RegistrationData(
-                "jimmy.gomez",
+                "jwhite.gomez4",
                 "Jimmy",
                 "Gomez",
                 "Password123@",
@@ -90,7 +91,8 @@ public class RegisterStepDefinition {
         );
 
         user.attemptsTo(
-                ProvideRegistrationCredentials.with(data)
+                ProvideRegistrationCredentials.with(data),
+                Pause.forMs(2000)
         );
     }
 
