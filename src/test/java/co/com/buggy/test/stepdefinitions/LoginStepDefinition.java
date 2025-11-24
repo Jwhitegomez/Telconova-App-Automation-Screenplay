@@ -6,14 +6,13 @@ import co.com.buggy.test.questions.LoginErrorMessage;
 import co.com.buggy.test.questions.LoginValidation;
 import co.com.buggy.test.tasks.*;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
@@ -41,24 +40,17 @@ public class LoginStepDefinition {
         );
     }
 
-    @When("I enter valid login credentials")
-    public void iEnterValidLoginCredentials() {
-        LoginData data = new LoginData(
-                "jwhite.gomez4",
-                "Password123@"
+    @When("I enter login credentials:")
+    public void iEnterLoginCredentials(Map<String, String> data) {
+
+        LoginData loginData = new LoginData(
+                data.get("username"),
+                data.get("password")
         );
 
-        user.attemptsTo(ProvideLoginCredentials.with(data));
-    }
-
-    @When("I enter invalid login credentials")
-    public void iEnterInvalidLoginCredentials() {
-        LoginData data = new LoginData(
-                "jwhite.gomez4",
-                "Password123"
+        user.attemptsTo(
+                ProvideLoginCredentials.with(loginData)
         );
-
-        user.attemptsTo(ProvideLoginCredentials.with(data));
     }
 
     @And("I submit the login form")
@@ -69,13 +61,13 @@ public class LoginStepDefinition {
         );
     }
 
-    @Then("I should see that I have logged in successfully")
-    public void iShouldSeeThatIHaveLoggedInSuccessfully() {
-        user.should(seeThat(LoginValidation.appears(), containsString("Logout")));
-    }
+    @Then("I should see {string}")
+    public void iShouldSee(String expected) {
 
-    @Then("I should see an error message indicating that the login failed")
-    public void iShouldSeeAnErrorMessageIndicatingThatTheLoginFailed() {
-        user.should(seeThat(LoginErrorMessage.appears(), containsString("Invalid username/password")));
+        if (expected.equals("Login successful")) {
+            user.should(seeThat(LoginValidation.appears(), containsString("Logout")));
+        } else {
+            user.should(seeThat(LoginErrorMessage.appears(), containsString(expected)));
+        }
     }
 }

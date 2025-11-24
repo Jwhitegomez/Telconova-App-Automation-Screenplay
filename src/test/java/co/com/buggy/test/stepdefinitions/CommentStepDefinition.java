@@ -67,7 +67,7 @@ public class CommentStepDefinition {
     @Given("I log in from the model page")
     public void iLogInFromTheModelPage() {
         LoginData data = new LoginData(
-                "jwhite.gomez4",
+                "jwhite.gomez9",
                 "Password123@"
         );
 
@@ -81,7 +81,7 @@ public class CommentStepDefinition {
 
     @When("I leave a comment.")
     public void iLeaveAComment() {
-        String comment = "ComentarioPrueba321";
+        String comment = "Calidad de Software UdeA 123";
 
         user.remember("lastComment", comment);
         user.attemptsTo(

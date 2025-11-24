@@ -6,14 +6,15 @@ Feature: Login to the Buggy Cars Rating platform
   As a registered user
   I want to log in successfully
 
-  Scenario: Successful login
+  Scenario Outline: Login attempts
     Given I am in the home page
-    When I enter valid login credentials
+    When I enter login credentials:
+      | username | <username> |
+      | password | <password> |
     And I submit the login form
-    Then I should see that I have logged in successfully
+    Then I should see "<expectedResult>"
 
-  Scenario: Failed login due to invalid credentials
-    Given I am in the home page
-    When I enter invalid login credentials
-    And I submit the login form
-    Then I should see an error message indicating that the login failed
+    Examples:
+      | username      | password       | expectedResult             |
+      | jwhite.gomez9 | Password123@   | Login successful           |
+      | jwhite.gomez9 | Password123    | Invalid username/password  |

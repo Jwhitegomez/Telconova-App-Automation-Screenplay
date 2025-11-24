@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Navigate from the Home page to the selected model" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-24T08:04:36.997Z" hostname="DESKTOP-PF36L1O" time="15.939">
+<testsuite name="Navigate from the Home page to the selected model" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-24T12:00:54.249Z" hostname="DESKTOP-PF36L1O" time="16.044">
   <properties/>
-  <testcase name="Navigate from the home page to the selected model" classname="Navigate from the Home page to the selected model" time="15.939"/>
+  <testcase name="Navigate from the home page to the selected model" classname="Navigate from the Home page to the selected model" time="16.044"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -12,10 +12,10 @@
 Navigate from the home page to the selected model(navigate-from-the-home-page-to-the-selected-model;navigate-from-the-home-page-to-the-selected-model)
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
-[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [remote-allow-origins=*], extensions: []}}
-nov 24, 2025 3:04:37 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., remote-allow-origins=*], extensions: []}}
+nov 24, 2025 7:00:55 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov 24, 2025 3:04:37 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov 24, 2025 7:00:55 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  

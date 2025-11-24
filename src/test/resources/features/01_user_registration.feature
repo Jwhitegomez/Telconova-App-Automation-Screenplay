@@ -1,18 +1,23 @@
-  #Autor: Jimmy
-    #Languaje: en
+# Author: Jimmy
+# Language: en
 
-  Feature: Join the Buggy Cars Rating platform
-    In order to join to the Buggy Rating Platform As a new user I want to create an account successfully
-    Scenario: Successful account creation
-      Given I am in the Buggy Rating home page
-      When I choose to create a new account
-      And I provide valid registration credentials
-      And I submit the registration form
-      Then I should confirm that the account was created
+Feature: Join the Buggy Cars Rating platform
+  In order to join the Buggy Rating Platform
+  As a new user
+  I want to create an account successfully
 
-    Scenario: Attempt to register with an existing username
-      Given I am in the Buggy Rating home page
-      When I choose to create a new account
-      And I provide registration credentials for an already registered user
-      And I submit the registration form
-      Then I should see a message indicating that the username is already taken
+  Scenario Outline: Account creation attempts
+    Given I am in the Buggy Rating home page
+    When I choose to create a new account
+    And I enter the registration data:
+      | username   | <username>   |
+      | firstName  | <firstName>  |
+      | lastName   | <lastName>   |
+      | password   | <password>   |
+    And I submit the registration form
+    Then I should see the message "<expectedMessage>"
+
+    Examples:
+      | username       | firstName  | lastName   | password      | expectedMessage                               |
+      | jwhite.gomez9  | Jimmy      | Gomez      | Password123@  | Account created                               |
+      | jwhite.gomez9  | Jimmy      | Gomez      | Password123@  | UsernameExistsException: User already exists  |

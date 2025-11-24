@@ -7,13 +7,13 @@ import co.com.buggy.test.questions.RegistrationErrorMessage;
 import co.com.buggy.test.questions.RegistrationSuccessMessage;
 import co.com.buggy.test.tasks.*;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Map;
 
 import static co.com.buggy.test.userinterfaces.HomePage.REGISTER_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -46,20 +46,20 @@ public class RegisterStepDefinition {
     @When("I choose to create a new account")
     public void iChooseToCreateANewAccount() {
         user.attemptsTo(
-
                 ClickOn.button(REGISTER_BUTTON),
                 Pause.forMs(3000)
         );
     }
 
-    @When("I provide valid registration credentials")
-    public void iProvideValidRegistrationCredentials() {
+    @When("I enter the registration data:")
+    public void iEnterTheRegistrationData(Map<String, String> dataTable) {
+
         RegistrationData data = new RegistrationData(
-                "jwhite.gomez4",
-                "Jimmy",
-                "Gomez",
-                "Password123@",
-                "Password123@"
+                dataTable.get("username"),
+                dataTable.get("firstName"),
+                dataTable.get("lastName"),
+                dataTable.get("password"),
+                dataTable.get("password")
         );
 
         user.attemptsTo(
@@ -67,7 +67,7 @@ public class RegisterStepDefinition {
         );
     }
 
-    @When("I submit the registration form")
+    @And("I submit the registration form")
     public void iSubmitTheRegistrationForm() {
         user.attemptsTo(
                 SubmitRegistrationForm.now(),
@@ -75,30 +75,13 @@ public class RegisterStepDefinition {
         );
     }
 
-    @Then("I should confirm that the account was created")
-    public void iShouldConfirmThatTheAccountWasCreated() {
-        user.should(seeThat(RegistrationSuccessMessage.appears(), equalTo(true)));
-    }
+    @Then("I should see the message {string}")
+    public void iShouldSeeTheMessage(String expectedMessage) {
 
-    @When("I provide registration credentials for an already registered user")
-    public void iProvideRegistrationCredentialsForAnAlreadyRegisteredUser() {
-        RegistrationData data = new RegistrationData(
-                "jwhite.gomez4",
-                "Jimmy",
-                "Gomez",
-                "Password123@",
-                "Password123@"
-        );
-
-        user.attemptsTo(
-                ProvideRegistrationCredentials.with(data),
-                Pause.forMs(2000)
-        );
-    }
-
-    @Then("I should see a message indicating that the username is already taken")
-    public void iShouldSeeAMessageIndicatingThatTheUsernameIsAlreadyTaken() {
-        user.should(seeThat(RegistrationErrorMessage.appears(),
-                containsString("UsernameExistsException: User already exists")));
+        if (expectedMessage.equals("Account created")) {
+            user.should(seeThat(RegistrationSuccessMessage.appears(), equalTo(true)));
+        } else {
+            user.should(seeThat(RegistrationErrorMessage.appears(), containsString(expectedMessage)));
+        }
     }
 }
