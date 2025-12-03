@@ -1,10 +1,13 @@
 package co.com.telconova.test.tasks;
 
+import co.com.telconova.test.interactions.ClickOn;
 import co.com.telconova.test.models.RegistrationData;
 import co.com.telconova.test.userinterfaces.RegistrationPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
+
+import static co.com.telconova.test.userinterfaces.RegistrationPage.*;
 
 public class ProvideRegistrationCredentials implements Task {
 
@@ -22,11 +25,13 @@ public class ProvideRegistrationCredentials implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                Enter.theValue(data.getUsername()).into(RegistrationPage.USERNAME),
-                Enter.theValue(data.getFirstName()).into(RegistrationPage.FIRST_NAME),
-                Enter.theValue(data.getLastName()).into(RegistrationPage.LAST_NAME),
-                Enter.theValue(data.getPassword()).into(RegistrationPage.PASSWORD),
-                Enter.theValue(data.getConfirmPassword()).into(RegistrationPage.CONFIRM_PASSWORD)
+                Enter.theValue(data.getName()).into(RegistrationPage.NAME),
+                Enter.theValue(data.getEmail()).into(RegistrationPage.EMAIL),
+                Enter.theValue(data.getPhone()).into(RegistrationPage.PHONE),
+                ClickOn.section(SPECIALTY),
+                ClickOn.item(SELECT_SPECIALTY.of("Mantenimiento")),
+                ClickOn.section(ZONE),
+                ClickOn.item(SELECT_ZONE.of("Centro"))
         );
     }
 }

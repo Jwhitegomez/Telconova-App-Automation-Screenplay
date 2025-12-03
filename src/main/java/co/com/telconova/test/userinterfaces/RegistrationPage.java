@@ -6,22 +6,30 @@ import org.openqa.selenium.By;
 
 public class RegistrationPage extends PageObject {
 
-    public static final Target USERNAME = Target.the("Username field").located(By.id("username"));
-    public static final Target FIRST_NAME = Target.the("First name field").located(By.id("firstName"));
-    public static final Target LAST_NAME = Target.the("Last name field").located(By.id("lastName"));
-    public static final Target PASSWORD = Target.the("Password field").located(By.id("password"));
-    public static final Target CONFIRM_PASSWORD = Target.the("Confirm password field").located(By.id("confirmPassword"));
+    public static final Target REGISTER_TECHNICIAN =
+            Target.the("Register technician section")
+                    .located(By.xpath("/html/body/div/div[2]/main/div/div[1]/button[2]"));
+
+    public static final Target NAME = Target.the("Name field").located(By.id("techName"));
+    public static final Target EMAIL = Target.the("Email field").located(By.id("techEmail"));
+    public static final Target PHONE = Target.the("Phone field").located(By.id("techPhone"));
+    public static final Target SPECIALTY = Target.the("Specialty field").located(By.id("techSpecialty"));
+    public static final Target ZONE = Target.the("Zone field").located(By.id("techZone"));
+
+    public static final Target SELECT_SPECIALTY =
+            Target.the("Select specialty")
+                    .locatedBy("//div[contains(@class,'radix') or @role='option'][normalize-space()='{0}']");
+
+    public static final Target SELECT_ZONE =
+            Target.the("Select zone")
+                    .locatedBy("//div[contains(@class,'radix') or @role='option'][normalize-space()='{0}']");
 
     public static final Target REGISTER_SUBMIT_BUTTON =
             Target.the("Register submit button")
-                    .located(By.xpath("//my-register//form//button[contains(text(),'Register')]"));
+                    .located(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div[2]/form/button"));
 
-    public static final Target REGISTRATION_SUCCESS_MESSAGE =
-            Target.the("Success registration message")
-                    .located(By.xpath("//form//div[contains(text(), 'Registration')]"));
-
-    public static final Target REGISTRATION_FAILURE_MESSAGE =
-            Target.the("Failure registration message")
-                    .located(By.xpath("/html/body/my-app/div/main/my-register/div/div/form/div[6]"));
+    public static final Target DASHBOARD =
+            Target.the("Dashboard button")
+                    .located(By.xpath("/html/body/div/div[2]/header/div/button"));
 
 }

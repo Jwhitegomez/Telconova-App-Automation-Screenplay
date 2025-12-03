@@ -2,9 +2,9 @@
 # Language: en
 
 Feature: Login to the Buggy Cars Rating platform
-  In order to access my user account
-  As a registered user
-  I want to log in successfully
+  In order to access my user account,
+  As a registered user,
+  I want to log in successfully.
 
   Scenario Outline: Login attempts
     Given I am in the home page
