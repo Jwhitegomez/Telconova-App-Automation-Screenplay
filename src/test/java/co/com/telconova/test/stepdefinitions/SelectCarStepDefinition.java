@@ -15,7 +15,6 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.WebDriver;
 
 import static co.com.telconova.test.userinterfaces.CarsModelListPage.LAMBORGHINI_VENENO;
-import static co.com.telconova.test.userinterfaces.HomePage.MODELS_LIST;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.containsString;
 
@@ -41,13 +40,13 @@ public class SelectCarStepDefinition {
         );
     }
 
-    @When("I navigate to the vehicles list")
-    public void iNavigateToTheVehiclesList() {
-        user.attemptsTo(
-                ClickOn.section(MODELS_LIST),
-                Pause.forMs(6000)
-        );
-    }
+    //@When("I navigate to the vehicles list")
+    //public void iNavigateToTheVehiclesList() {
+    //    user.attemptsTo(
+     //           ClickOn.section(),
+      //          Pause.forMs(6000)
+       // );
+    // }
 
     @And("I select the Lamborghini Veneno model")
     public void iSelectTheLamborghiniVenenoModel() {

@@ -25,4 +25,8 @@ public class ClickOn implements Interaction {
     public static ClickOn section(Target target) {
         return Tasks.instrumented(ClickOn.class, target);
     }
+
+    public static ClickOn item(Target target) {
+        return Tasks.instrumented(ClickOn.class, target);
+    }
 }
