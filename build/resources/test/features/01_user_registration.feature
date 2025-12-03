@@ -19,5 +19,5 @@ Feature: Join the Buggy Cars Rating platform
 
     Examples:
       | username       | firstName  | lastName   | password      | expectedMessage                               |
-      | jwhite.gomez8  | Jimmy      | Gomez      | Password123@  | Account created                               |
-      | jwhite.gomez8  | Jimmy      | Gomez      | Password123@  | UsernameExistsException: User already exists  |
+      | jwhite.gomez9  | Jimmy      | Gomez      | Password123@  | Account created                               |
+      | jwhite.gomez9  | Jimmy      | Gomez      | Password123@  | UsernameExistsException: User already exists  |

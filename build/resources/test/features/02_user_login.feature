@@ -16,5 +16,5 @@ Feature: Login to the Buggy Cars Rating platform
 
     Examples:
       | username      | password       | expectedResult             |
-      | jwhite.gomez8 | Password123@   | Login successful           |
-      | jwhite.gomez8 | Password123    | Invalid username/password  |
+      | jwhite.gomez9 | Password123@   | Login successful           |
+      | jwhite.gomez9 | Password123    | Invalid username/password  |

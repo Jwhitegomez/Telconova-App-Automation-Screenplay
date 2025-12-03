@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Leave a comment on a car model page" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-24T12:01:10.294Z" hostname="DESKTOP-PF36L1O" time="33.018">
+<testsuite name="Leave a comment on a car model page" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-24T12:18:32.555Z" hostname="DESKTOP-PF36L1O" time="34.98">
   <properties/>
-  <testcase name="User cannot post a comment when not logged in" classname="Leave a comment on a car model page" time="8.15"/>
-  <testcase name="Leave a comment on the model after logging in" classname="Leave a comment on a car model page" time="24.868"/>
+  <testcase name="User cannot post a comment when not logged in" classname="Leave a comment on a car model page" time="8.909"/>
+  <testcase name="Leave a comment on the model after logging in" classname="Leave a comment on a car model page" time="26.07"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -14,9 +14,9 @@ User cannot post a comment when not logged in(leave-a-comment-on-a-car-model-pag
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., remote-allow-origins=*], extensions: []}}
-nov 24, 2025 7:01:11 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov 24, 2025 7:18:33 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov 24, 2025 7:01:11 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov 24, 2025 7:18:33 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -36,9 +36,9 @@ Leave a comment on the model after logging in(leave-a-comment-on-a-car-model-pag
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., window-size=1920,1080, start-maximized, --test-type, no-sandbox, ignore-certificate-errors, incognito, disable-infobars, disable-gpu, disable-default-apps, disable-popup-blocking, disable-extensions-file-acc..., remote-allow-origins=*], extensions: []}}
-nov 24, 2025 7:01:19 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov 24, 2025 7:18:42 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 142
-nov 24, 2025 7:01:19 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+nov 24, 2025 7:18:42 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 142.0.7444.176. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
