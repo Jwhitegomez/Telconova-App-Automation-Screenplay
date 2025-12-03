@@ -2,6 +2,7 @@ package co.com.telconova.test.stepdefinitions;
 
 import co.com.telconova.test.interactions.Pause;
 import co.com.telconova.test.models.LoginData;
+import co.com.telconova.test.questions.LoginAttemptResult;
 import co.com.telconova.test.questions.LoginErrorMessage;
 import co.com.telconova.test.questions.LoginValidation;
 import co.com.telconova.test.tasks.GoToTelconovaHomePage;
@@ -71,5 +72,30 @@ public class LoginStepDefinition {
         } else {
             user.should(seeThat(LoginErrorMessage.appears(), containsString(expected)));
         }
+    }
+
+    @When("I try to login with wrong credentials three times in a row with:")
+    public void iTryToLoginWithWrongCredentialsThreeTimesInARowWith(Map<String, String> data) {
+        LoginData loginData = new LoginData(
+                data.get("username"),
+                data.get("password")
+        );
+
+        user.attemptsTo(
+                ProvideLoginCredentials.with(loginData),
+                SubmitLoginForm.now(),
+                Pause.forMs(3000),
+                ProvideLoginCredentials.with(loginData),
+                SubmitLoginForm.now(),
+                Pause.forMs(3000),
+                ProvideLoginCredentials.with(loginData),
+                SubmitLoginForm.now(),
+                Pause.forMs(6000)
+        );
+    }
+
+    @Then("I should see {string} blocking message")
+    public void iShouldSeeBlockingMessage(String expected) {
+        user.should(seeThat(LoginAttemptResult.displayed(), containsString(expected)));
     }
 }

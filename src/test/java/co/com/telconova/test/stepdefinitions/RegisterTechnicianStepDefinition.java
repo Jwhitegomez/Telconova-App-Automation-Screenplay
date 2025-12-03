@@ -7,7 +7,6 @@ import co.com.telconova.test.models.RegistrationData;
 import co.com.telconova.test.questions.TechnicianWasRegistered;
 import co.com.telconova.test.tasks.*;
 import io.cucumber.java.Before;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/2.3.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/2.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/2.3.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+
+    <!-- Swiper.js local styles and script -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startIndex = parseInt(urlParams.get("screenshot")) || 0;
+
+            new Swiper('.swiper', {
+                initialSlide: startIndex,
+                effect: 'fade',
+                speed: 200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: lightgrey;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="5996414549e474322161ea9fc78c0fe05b89c02d68b460760eb2a8e099bed1c6.html">Manual Assignment A Technician To A Work Order</a></span>
+                > <span class="truncate-60"><a
+                    href="a2bbbd09a9d5448ff21f250b33df782f968d397a6e7916b2a8d2dad6fab4cd72.html">Manually assigning a technician to a work order </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 03-12-2025 04:00</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Manual Assignment A Technician To A Work Order</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                In order to complete work orders,<br />
+As a supervisor,<br />
+I want to manually assign a technician to a work order.
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6c5512236937b92cd7a296b24edb966c2bd94be46b8910f8b129a42d6150eb25.html">1 To 10 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Manually assigning a technician to a work order
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="73dbb6b6804c1e25eebc035de497d43ce77a8464029df29564c137c51f336502.png" title=" Given I am in the dashboard" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="73dbb6b6804c1e25eebc035de497d43ce77a8464029df29564c137c51f336502.png" title=" Jimmy go to dashboard" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="73dbb6b6804c1e25eebc035de497d43ce77a8464029df29564c137c51f336502.png" title=" Jimmy go to telconova home page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="73dbb6b6804c1e25eebc035de497d43ce77a8464029df29564c137c51f336502.png" title=" Jimmy opens the browser at https://telconova-dispatch-dash.lovable.app/login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="73dbb6b6804c1e25eebc035de497d43ce77a8464029df29564c137c51f336502.png" title=" Jimmy go to telconova home page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ddd8035ad7b20b8abf3cf97790b8f6f950e11c98018b2e3ccf6e2b107c8f4467.png" title=" Jimmy enters 'supervisor_test' into Username field" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="daaa550aa8679e089ecd0fd23486be400757ed350197fcc77d59fe2b432b72d5.png" title=" Jimmy enters 'supervisor_test' into Username field (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="daaa550aa8679e089ecd0fd23486be400757ed350197fcc77d59fe2b432b72d5.png" title=" Jimmy enters 'password123' into Password field" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cca008c79fef44bbc318914f5565607332f3d5ee9557ac3e9f8077bab08eb181.png" title=" Jimmy enters 'password123' into Password field (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cca008c79fef44bbc318914f5565607332f3d5ee9557ac3e9f8077bab08eb181.png" title=" Jimmy submit login form" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cca008c79fef44bbc318914f5565607332f3d5ee9557ac3e9f8077bab08eb181.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="cca008c79fef44bbc318914f5565607332f3d5ee9557ac3e9f8077bab08eb181.png" title=" Jimmy clicks on Login button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c4f4123fa1b858a689e53f968df62899bd7214c1b3bf0a7e4cc021dd2431cd33.png" title=" Jimmy clicks on Login button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c4f4123fa1b858a689e53f968df62899bd7214c1b3bf0a7e4cc021dd2431cd33.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c4f4123fa1b858a689e53f968df62899bd7214c1b3bf0a7e4cc021dd2431cd33.png" title=" Jimmy submit login form (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="a1fed8870e321752086952e007d85643919bcd600a007a3c746cea8fa705176b.png" title=" Jimmy go to dashboard (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="a1fed8870e321752086952e007d85643919bcd600a007a3c746cea8fa705176b.png" title=" Given I am in the dashboard (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9fb5d868d61b576f2e01e736f5b798d15d10323c2fffa1d68037692439e524ca.png" title=" And I go to manual assignment module" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9fb5d868d61b576f2e01e736f5b798d15d10323c2fffa1d68037692439e524ca.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9fb5d868d61b576f2e01e736f5b798d15d10323c2fffa1d68037692439e524ca.png" title=" Jimmy clicks on Manual assignment module" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9fb5d868d61b576f2e01e736f5b798d15d10323c2fffa1d68037692439e524ca.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="643907af569a5d2666f080a9b6479340159e346782040a5d7a43773ba8fcf4a6.png" title=" And I go to manual assignment module (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="411ea945d59e2eae9a785652db9c128aea3a0ae6b3d061a60ad8dc774abe0580.png" title=" When I select a technician from the list" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="411ea945d59e2eae9a785652db9c128aea3a0ae6b3d061a60ad8dc774abe0580.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="411ea945d59e2eae9a785652db9c128aea3a0ae6b3d061a60ad8dc774abe0580.png" title=" Jimmy clicks on Technician" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="411ea945d59e2eae9a785652db9c128aea3a0ae6b3d061a60ad8dc774abe0580.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="40702f67d62abfb85ff74aecefb0593f38671f39c8ab7bf35cfcf150306fbdc5.png" title=" When I select a technician from the list (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ee25ddb89019f49cca125d2064801a19cfdba64ae108a2b23a22d5a5739ce04.png" title=" And I assign the technician to a work order" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ee25ddb89019f49cca125d2064801a19cfdba64ae108a2b23a22d5a5739ce04.png" title=" Jimmy assign" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ee25ddb89019f49cca125d2064801a19cfdba64ae108a2b23a22d5a5739ce04.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ee25ddb89019f49cca125d2064801a19cfdba64ae108a2b23a22d5a5739ce04.png" title=" Jimmy clicks on Work order" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ee25ddb89019f49cca125d2064801a19cfdba64ae108a2b23a22d5a5739ce04.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d3944f2ae5a577e481add9923efb1ca554050d8b457dc20bd4230ceb38ab2dc.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d3944f2ae5a577e481add9923efb1ca554050d8b457dc20bd4230ceb38ab2dc.png" title=" Jimmy clicks on Assign Technician button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="d4382e5e09a205e0a1f966a4640c46bb253af3ab9bfd7292ecb35d988d3f026f.png" title=" Jimmy clicks on Assign Technician button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="d4382e5e09a205e0a1f966a4640c46bb253af3ab9bfd7292ecb35d988d3f026f.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5fe02493c23b271b35ff371437020da0af0ae9f1f66fd088d2f1a6f99d145d85.png" title=" Jimmy assign (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5fe02493c23b271b35ff371437020da0af0ae9f1f66fd088d2f1a6f99d145d85.png" title=" And I assign the technician to a work order (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e461bf77583786613c278e075630869c4f49d8dea403dd0691a402f9408a1713.png" title=" Then I should confirm that the work order was assigned" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e461bf77583786613c278e075630869c4f49d8dea403dd0691a402f9408a1713.png" title=" Jimmy click on" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e461bf77583786613c278e075630869c4f49d8dea403dd0691a402f9408a1713.png" title=" Jimmy clicks on Work orders module" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e461bf77583786613c278e075630869c4f49d8dea403dd0691a402f9408a1713.png" title=" Jimmy click on (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c1c977e5775fe54a52dce09933887e2d48eaf2300e7cddd22919a6c67fb9c7b4.png" title=" Then work order was assigned should be (true)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c1c977e5775fe54a52dce09933887e2d48eaf2300e7cddd22919a6c67fb9c7b4.png" title=" Then I should confirm that the work order was assigned (completed): <span class='success-color'>SUCCESS</span>" width="0" />
+                </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 4.3.2</span>
+</div>
+</body>
+</html>

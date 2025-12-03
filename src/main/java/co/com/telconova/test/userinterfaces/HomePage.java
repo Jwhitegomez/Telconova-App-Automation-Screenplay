@@ -26,4 +26,8 @@ public class HomePage extends PageObject {
             Target.the("Logout button")
                     .located(By.xpath("//*[@id=\"root\"]/div[2]/header/div/nav/button[2]"));
 
+    public static final Target ALERT_MESSAGE =
+            Target.the("login alert message")
+                    .locatedBy("/html/body/div/div[2]/div/div[1]/div[2]/div[1]/div");
+
 }

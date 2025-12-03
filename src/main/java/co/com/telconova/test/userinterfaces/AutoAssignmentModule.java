@@ -8,10 +8,10 @@ public class AutoAssignmentModule extends PageObject {
 
     public static final Target ORDER =
             Target.the("Work order")
-                    .located(By.xpath("//*[@id=\"radix-:r0:-content-automatic\"]/div/div[2]/div[2]/div/div/div[1]"));
+                    .located(By.xpath("/html/body/div/div[2]/main/div/div[4]/div/div[2]/div[2]/div/div/div[1]"));
 
     public static final Target ASSIGN_AUTOMATICALLY =
             Target.the("Assign work order button")
-                    .located(By.xpath("//*[@id=\"radix-:r0:-content-automatic\"]/div/div[2]/div[2]/div/button"));
+                    .located(By.xpath("/html/body/div/div[2]/main/div/div[4]/div/div[2]/div[2]/div/button"));
 
 }

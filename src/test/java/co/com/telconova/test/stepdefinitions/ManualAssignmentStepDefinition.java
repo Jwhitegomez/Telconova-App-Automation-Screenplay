@@ -4,9 +4,7 @@ import co.com.telconova.test.interactions.ClickOn;
 import co.com.telconova.test.interactions.Pause;
 import co.com.telconova.test.models.LoginData;
 import co.com.telconova.test.questions.WorkOrderWasAssigned;
-import co.com.telconova.test.tasks.GoToTelconovaHomePage;
-import co.com.telconova.test.tasks.ProvideLoginCredentials;
-import co.com.telconova.test.tasks.SubmitLoginForm;
+import co.com.telconova.test.tasks.*;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -40,19 +38,7 @@ public class ManualAssignmentStepDefinition {
 
     @Given("I am in the dashboard")
     public void iAmInTheDashboard() {
-        LoginData data = new LoginData(
-                "supervisor_test",
-                "password123"
-        );
-
-        user.attemptsTo(
-                GoToTelconovaHomePage.goTo(),
-                Pause.forMs(2000),
-                ProvideLoginCredentials.with(data),
-                Pause.forMs(1000),
-                SubmitLoginForm.now(),
-                Pause.forMs(4000)
-        );
+        user.attemptsTo(GoToDashboard.now());
     }
 
     @And("I go to manual assignment module")
@@ -73,12 +59,7 @@ public class ManualAssignmentStepDefinition {
 
     @And("I assign the technician to a work order")
     public void iAssignTheTechnicianToAWorkOrder() {
-        user.attemptsTo(
-                ClickOn.item(ORDER),
-                Pause.forMs(1500),
-                ClickOn.button(ASSIGN_TECHNICIAN),
-                Pause.forMs(3000)
-        );
+        user.attemptsTo(Assign.technician());
     }
 
     @Then("I should confirm that the work order was assigned")

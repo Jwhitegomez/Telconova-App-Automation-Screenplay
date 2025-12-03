@@ -4,6 +4,7 @@ import co.com.telconova.test.interactions.ClickOn;
 import co.com.telconova.test.interactions.Pause;
 import co.com.telconova.test.models.LoginData;
 import co.com.telconova.test.questions.WorkOrderWasAssigned;
+import co.com.telconova.test.tasks.GoToDashboard;
 import co.com.telconova.test.tasks.GoToTelconovaHomePage;
 import co.com.telconova.test.tasks.ProvideLoginCredentials;
 import co.com.telconova.test.tasks.SubmitLoginForm;
@@ -40,19 +41,7 @@ public class AutomaticAssignmentStepDefinition {
 
     @Given("I am in the dashboard module")
     public void iAmInTheDashboardModule() {
-        LoginData data = new LoginData(
-                "supervisor_test",
-                "password123"
-        );
-
-        user.attemptsTo(
-                GoToTelconovaHomePage.goTo(),
-                Pause.forMs(2000),
-                ProvideLoginCredentials.with(data),
-                Pause.forMs(1000),
-                SubmitLoginForm.now(),
-                Pause.forMs(4000)
-        );
+        user.attemptsTo(GoToDashboard.now());
     }
 
     @And("I go to automatic assignment module")
