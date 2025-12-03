@@ -33,4 +33,9 @@ public class HomePage extends PageObject {
     public static final Target MODELS_LIST =
             Target.the("Car's model list")
                     .located(By.xpath("/html/body/my-app/div/main/my-home/div/div[3]/div/a"));
+
+    public static final Target ALERT_MESSAGE =
+            Target.the("login alert message")
+                    .locatedBy("/html/body/div/div[2]/div/div[1]/div[2]/div[1]/div");
+
 }
